@@ -1,0 +1,13 @@
+SECRET_KEY=django-insecure-0bu*5jcl9wem)0r!+!2yfu=8+dotss&fulm1z@eys+dr-b9rb!
+DEBUG=True
+
+POSTGRES_HOST=localhost
+POSTGRES_PORT=5432
+POSTGRES_DB=library
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=postgres
+
+CELERY_BROKER_URL=redis://redis:6379
+CELERY_RESULT_BACKEND=redis://redis:6379
+
+TELEGRAM_TOKEN=7399544673:AAE7YiSL1w7CHNd39ivxx3PybCc5gqAJOmM
