@@ -1,5 +1,9 @@
 ## Дипломная работа "Управление библиотекой"
-- 
+- Чувствительные переменные выведены в файл ".env".
+- Реализована модель пользователя.
+
+
+
 - Описан Dockerfile для запуска контейнера с проектом.
 - Создан Docker Compose Django-проект с БД PostgreSQL.
 - Добавлен в docker-compose.yaml работу с Redis.
@@ -24,7 +28,7 @@ git clone https://github.com/AidarPutilov/diplom.git
 
 #### Переход в каталог
 ```
-cd kurs7
+cd diplom
 ```
 
 #### Базовые настройки
