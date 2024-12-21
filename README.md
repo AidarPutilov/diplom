@@ -52,6 +52,13 @@ http://127.0.0.1:8000/swagger/ - Swagger
 http://127.0.0.1:8000/redoc/ - Redoc
 ```
 
+### Запросы Author
+```
+http://127.0.0.1:8000/author/ - LIST, CREATE
+http://127.0.0.1:8000/author/<pk>/ - RETRIEVE, PUT, PATCH, DELETE
+```
+
+
 ### Запросы User
 ```
 http://127.0.0.1:8000/users/register/ - Регистрация пользователя
@@ -64,7 +71,5 @@ http://127.0.0.1:8000/users/delete/<pk>/ - Удаление пользовате
 
 ### Запросы Habit
 ```
-http://127.0.0.1:8000/main/ - LIST, CREATE
-http://127.0.0.1:8000/main/<pk>/ - RETRIEVE, PUT, PATCH, DELETE
 http://127.0.0.1:8000/main/public/ - Список публичных записей
 ```
