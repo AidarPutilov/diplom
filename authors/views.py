@@ -10,6 +10,6 @@ class AuthorViewSet(viewsets.ModelViewSet):
 
     def perform_create(self, serializer):
         """Назначение владельца записи."""
-        course = serializer.save()
-        course.owner = self.request.user
-        course.save()
+        author = serializer.save()
+        author.owner = self.request.user
+        author.save()
