@@ -1,6 +1,6 @@
 ## Дипломная работа "Управление библиотекой"
 - Чувствительные переменные выведены в файл ".env".
-- Реализована модель пользователя.
+- Реализованы модели User, Book, Author.
 
 
 
@@ -52,13 +52,6 @@ http://127.0.0.1:8000/swagger/ - Swagger
 http://127.0.0.1:8000/redoc/ - Redoc
 ```
 
-### Запросы Author
-```
-http://127.0.0.1:8000/author/ - LIST, CREATE
-http://127.0.0.1:8000/author/<pk>/ - RETRIEVE, PUT, PATCH, DELETE
-```
-
-
 ### Запросы User
 ```
 http://127.0.0.1:8000/users/register/ - Регистрация пользователя
@@ -69,7 +62,14 @@ http://127.0.0.1:8000/users/update/<pk>/ - Редактирование поль
 http://127.0.0.1:8000/users/delete/<pk>/ - Удаление пользователя
 ```
 
-### Запросы Habit
+### Запросы Author
 ```
-http://127.0.0.1:8000/main/public/ - Список публичных записей
+http://127.0.0.1:8000/author/ - LIST, CREATE
+http://127.0.0.1:8000/author/<pk>/ - RETRIEVE, PUT, PATCH, DELETE
+```
+
+### Запросы Book
+```
+http://127.0.0.1:8000/book/ - LIST, CREATE
+http://127.0.0.1:8000/book/<pk>/ - RETRIEVE, PUT, PATCH, DELETE
 ```

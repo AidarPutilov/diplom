@@ -1,4 +1,4 @@
-from books.serializers import BookSerializer
+from books.serializers import BookDetailSerializer, BookSerializer
 from rest_framework import viewsets
 
 from books.models import Book
@@ -8,11 +8,11 @@ class BookViewSet(viewsets.ModelViewSet):
     serializer_class = BookSerializer
     queryset = Book.objects.all()
 
-    # def get_serializer_class(self):
-    #     """Выбор сериализатора в зависимости от запроса."""
-    #     if self.action == "retrieve":
-    #         return BookDetailSerializer
-    #     return BookSerializer
+    def get_serializer_class(self):
+        """Выбор сериализатора в зависимости от запроса."""
+        if self.action == "retrieve":
+            return BookDetailSerializer
+        return BookSerializer
 
     def perform_create(self, serializer):
         """Назначение владельца записи."""
