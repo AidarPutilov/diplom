@@ -1,40 +1,36 @@
+from rest_framework import generics
 from books.serializers import BookDetailSerializer, BookSerializer
-from rest_framework import viewsets
 
 from books.models import Book
 
 
-class BookViewSet(viewsets.ModelViewSet):
-    serializer_class = BookSerializer
+class BookCreateAPIView(generics.CreateAPIView):
     queryset = Book.objects.all()
-
-    def get_serializer_class(self):
-        """Выбор сериализатора в зависимости от запроса."""
-        if self.action == "retrieve":
-            return BookDetailSerializer
-        return BookSerializer
+    serializer_class = BookSerializer
 
     def perform_create(self, serializer):
         """Назначение владельца записи."""
-        book = serializer.save()
-        book.owner = self.request.user
-        book.save()
+        lesson = serializer.save()
+        lesson.owner = self.request.user
+        lesson.save()
 
-    # def perform_update(self, serializer):
-    #     """Оправка писем при обновлении курса."""
-    #     # print("1")
-    #     course = serializer.save()
-    #     # print("2")
-    #     course_pk = self.get_object().pk
-    #     send_info.delay(course_pk)
-    #     course.save()
 
-    # def get_permissions(self):
-    #     """Назначение разрешений."""
-    #     if self.action == "create":
-    #         self.permission_classes = (~IsModer,)
-    #     elif self.action == "destroy":
-    #         self.permission_classes = (~IsModer | IsOwner,)
-    #     elif self.action in ["update", "retrieve"]:
-    #         self.permission_classes = (IsModer | IsOwner,)
-    #     return super().get_permissions()
+class BookListAPIView(generics.ListAPIView):
+    queryset = Book.objects.all()
+    serializer_class = BookSerializer
+    filterset_fields = ("title", "author", "genre")
+
+
+class BookRetrieveAPIView(generics.RetrieveAPIView):
+    queryset = Book.objects.all()
+    serializer_class = BookDetailSerializer
+
+
+class BookDestroyAPIView(generics.DestroyAPIView):
+    queryset = Book.objects.all()
+    serializer_class = BookSerializer
+
+
+class BooknUpdateAPIView(generics.UpdateAPIView):
+    queryset = Book.objects.all()
+    serializer_class = BookSerializer

@@ -70,6 +70,9 @@ http://127.0.0.1:8000/author/<pk>/ - RETRIEVE, PUT, PATCH, DELETE
 
 ### Запросы Book
 ```
-http://127.0.0.1:8000/book/ - LIST, CREATE
-http://127.0.0.1:8000/book/<pk>/ - RETRIEVE, PUT, PATCH, DELETE
+http://127.0.0.1:8000/book/list/ - LIST
+http://127.0.0.1:8000/book/detail/<pk>/ - RETRIEVE
+http://127.0.0.1:8000/book/create/ - CREATE
+http://127.0.0.1:8000/book/update/<pk>/ - PUT, PATCH
+http://127.0.0.1:8000/book/delete/<pk>/ - DELETE
 ```
