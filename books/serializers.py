@@ -1,7 +1,9 @@
 from rest_framework import serializers
+from rest_framework.validators import UniqueTogetherValidator
+
 
 from authors.serializers import AuthorSerializer
-from books.models import Book
+from books.models import Book, Lending
 
 
 class BookSerializer(serializers.ModelSerializer):
@@ -20,3 +22,18 @@ class BookDetailSerializer(serializers.ModelSerializer):
         model = Book
         # fields = "__all__"
         fields = ("id", "title", "description", "authors", "genre", "owner")
+
+
+class LendingSerializer(serializers.ModelSerializer):
+    """Сериализатор для Lending."""
+
+    class Meta:
+        model = Lending
+        fields = "__all__"
+        validators = [
+            UniqueTogetherValidator(
+                queryset=Lending.objects.all(),
+                fields=["user", "book"],
+                message="Книга выдана"
+            )
+        ]

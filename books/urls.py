@@ -1,5 +1,5 @@
 from django.urls import path
-from books.views import BookCreateAPIView, BookDestroyAPIView, BookListAPIView, BookRetrieveAPIView, BooknUpdateAPIView
+from books.views import BookCreateAPIView, BookDestroyAPIView, BookListAPIView, BookRetrieveAPIView, BooknUpdateAPIView, LendingAPIView
 from books.apps import BooksConfig
 
 
@@ -11,4 +11,5 @@ urlpatterns = [
     path("create/", BookCreateAPIView.as_view(), name="book_create"),
     path("delete/<int:pk>/", BookDestroyAPIView.as_view(), name="book_delete"),
     path("update/<int:pk>/", BooknUpdateAPIView.as_view(), name="book_update"),
+    path("lending/", LendingAPIView.as_view(), name="lending"),
 ]

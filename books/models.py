@@ -5,6 +5,8 @@ from config.settings import AUTH_USER_MODEL
 
 
 class Book(models.Model):
+    """Модель для книг."""
+
     title = models.CharField(
         max_length=50,
         verbose_name="название",
@@ -43,3 +45,25 @@ class Book(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Lending(models.Model):
+    """Модель для выдачи книг."""
+
+    user = models.ForeignKey(
+        AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        verbose_name="пользователь",
+    )
+    book = models.ForeignKey(
+        Book,
+        on_delete=models.CASCADE,
+        verbose_name="книга",
+    )
+
+    class Meta:
+        verbose_name = "выдача"
+        verbose_name_plural = "выдачи"
+
+    def __str__(self):
+        return f"{self.user}: {self.book}"
