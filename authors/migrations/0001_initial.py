@@ -15,17 +15,42 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Author',
+            name="Author",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=50, verbose_name='имя автора')),
-                ('description', models.CharField(blank=True, max_length=200, null=True, verbose_name='описание автора')),
-                ('owner', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL, verbose_name='владелец записи')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=50, verbose_name="имя автора")),
+                (
+                    "description",
+                    models.CharField(
+                        blank=True,
+                        max_length=200,
+                        null=True,
+                        verbose_name="описание автора",
+                    ),
+                ),
+                (
+                    "owner",
+                    models.ForeignKey(
+                        blank=True,
+                        null=True,
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to=settings.AUTH_USER_MODEL,
+                        verbose_name="владелец записи",
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'автор',
-                'verbose_name_plural': 'авторы',
-                'ordering': ('name',),
+                "verbose_name": "автор",
+                "verbose_name_plural": "авторы",
+                "ordering": ("name",),
             },
         ),
     ]

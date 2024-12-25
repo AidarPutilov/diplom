@@ -1,5 +1,12 @@
 from django.urls import path
-from books.views import BookCreateAPIView, BookDestroyAPIView, BookListAPIView, BookRetrieveAPIView, BooknUpdateAPIView, LendingAPIView
+from books.views import (
+    BookCreateAPIView,
+    BookDestroyAPIView,
+    BookListAPIView,
+    BookRetrieveAPIView,
+    BooknUpdateAPIView,
+    LendingAPIView,
+)
 from books.apps import BooksConfig
 
 

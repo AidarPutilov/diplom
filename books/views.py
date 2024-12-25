@@ -54,9 +54,9 @@ class LendingAPIView(APIView):
         if subs_item.exists():
             # Удаление выдачи
             subs_item.delete()
-            message = "Выдача удалена"
+            message = "Книга возвращена"
         else:
             # Создание выдачи
             Lending.objects.create(user=user, book=book)
-            message = "Выдача добавлена"
+            message = "Книга выдана"
         return Response({"message": message})
