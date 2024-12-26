@@ -1,13 +1,11 @@
 ## Дипломная работа "Управление библиотекой"
 - Чувствительные переменные выведены в файл ".env".
-- Реализована модель пользователя.
-
-
-
+- Реализованы модели User, Book, Author.
+- Реализована аутентификация и авторизация пользоветелей.
+- Реализованы API.
+- Реализовано приложение регистрации и отмены выдачи книги авторизованному пользователю.
 - Описан Dockerfile для запуска контейнера с проектом.
 - Создан Docker Compose Django-проект с БД PostgreSQL.
-- Добавлен в docker-compose.yaml работу с Redis.
-- Добавлен в docker-compose.yaml работу с Celery.
 - Работа проверена с помощью Postman и в браузере.
 
 ### Основные приложения
@@ -33,7 +31,7 @@ cd diplom
 
 #### Базовые настройки
 ```
-Ввести настройки django, сервера PostgreSQL, сервера Redis в файле ".env.sample". Переименовать файл в ".env".
+Ввести настройки django, сервера PostgreSQL ".env.sample". Переименовать файл в ".env".
 ```
 
 #### Создание и запуск контейнера
@@ -62,9 +60,19 @@ http://127.0.0.1:8000/users/update/<pk>/ - Редактирование поль
 http://127.0.0.1:8000/users/delete/<pk>/ - Удаление пользователя
 ```
 
-### Запросы Habit
+### Запросы Author
 ```
-http://127.0.0.1:8000/main/ - LIST, CREATE
-http://127.0.0.1:8000/main/<pk>/ - RETRIEVE, PUT, PATCH, DELETE
-http://127.0.0.1:8000/main/public/ - Список публичных записей
+http://127.0.0.1:8000/author/ - LIST, CREATE
+http://127.0.0.1:8000/author/<pk>/ - RETRIEVE, PUT, PATCH, DELETE
+```
+
+### Запросы Book
+```
+http://127.0.0.1:8000/book/list/ - LIST
+http://127.0.0.1:8000/book/detail/<pk>/ - RETRIEVE
+http://127.0.0.1:8000/book/create/ - CREATE
+http://127.0.0.1:8000/book/update/<pk>/ - PUT, PATCH
+http://127.0.0.1:8000/book/delete/<pk>/ - DELETE
+http://127.0.0.1:8000/book/list?search=<string> - поиск по названию, автору и жанру
+http://127.0.0.1:8000/book/lending/ - выдача/возврат книги: POST {"book": <pk>}
 ```
