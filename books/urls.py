@@ -14,7 +14,11 @@ app_name = BooksConfig.name
 
 urlpatterns = [
     path("list/", BookListAPIView.as_view(), name="book_list"),
-    path("detail/<int:pk>/", BookRetrieveAPIView.as_view(), name="book_retrieve"),
+    path(
+        "detail/<int:pk>/",
+        BookRetrieveAPIView.as_view(),
+        name="book_retrieve"
+    ),
     path("create/", BookCreateAPIView.as_view(), name="book_create"),
     path("delete/<int:pk>/", BookDestroyAPIView.as_view(), name="book_delete"),
     path("update/<int:pk>/", BooknUpdateAPIView.as_view(), name="book_update"),

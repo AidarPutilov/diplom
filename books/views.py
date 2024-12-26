@@ -3,7 +3,11 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import generics
 from rest_framework import filters
-from books.serializers import BookDetailSerializer, BookSerializer, LendingSerializer
+from books.serializers import (
+    BookDetailSerializer,
+    BookSerializer,
+    LendingSerializer
+)
 
 from books.models import Book, Lending
 
@@ -47,7 +51,8 @@ class BooknUpdateAPIView(generics.UpdateAPIView):
 
 
 class LendingAPIView(APIView):
-    """API GET для выдачи книги. Вызов добавляет запись, повторный вызов - удаляет её."""
+    """API GET для выдачи книги. Вызов добавляет запись,
+    повторный вызов - удаляет её."""
     queryset = Lending.objects.all()
     serializer_class = LendingSerializer
 
