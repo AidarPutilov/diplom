@@ -5,6 +5,7 @@ from authors.serializers import AuthorDetailSerializer, AuthorSerializer
 
 
 class AuthorViewSet(viewsets.ModelViewSet):
+    """ViewSet для авторов."""
     serializer_class = AuthorSerializer
     queryset = Author.objects.all()
 

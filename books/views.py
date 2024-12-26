@@ -9,6 +9,7 @@ from books.models import Book, Lending
 
 
 class BookCreateAPIView(generics.CreateAPIView):
+    """API CREATE для книги."""
     queryset = Book.objects.all()
     serializer_class = BookSerializer
 
@@ -20,6 +21,7 @@ class BookCreateAPIView(generics.CreateAPIView):
 
 
 class BookListAPIView(generics.ListAPIView):
+    """API GET для книги."""
     queryset = Book.objects.all()
     serializer_class = BookSerializer
     filter_backends = [filters.SearchFilter]
@@ -27,21 +29,25 @@ class BookListAPIView(generics.ListAPIView):
 
 
 class BookRetrieveAPIView(generics.RetrieveAPIView):
+    """API RETRIVE для книги."""
     queryset = Book.objects.all()
     serializer_class = BookDetailSerializer
 
 
 class BookDestroyAPIView(generics.DestroyAPIView):
+    """API DELETE для книги."""
     queryset = Book.objects.all()
     serializer_class = BookSerializer
 
 
 class BooknUpdateAPIView(generics.UpdateAPIView):
+    """API PATCH для книги."""
     queryset = Book.objects.all()
     serializer_class = BookSerializer
 
 
 class LendingAPIView(APIView):
+    """API GET для выдачи книги. Вызов добавляет запись, повторный вызов - удаляет её."""
     queryset = Lending.objects.all()
     serializer_class = LendingSerializer
 

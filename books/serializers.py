@@ -8,7 +8,6 @@ from books.models import Book, Lending
 
 class BookSerializer(serializers.ModelSerializer):
     """Сериализатор для Book."""
-
     lending = serializers.SerializerMethodField(read_only=True)
 
     def get_lending(self, book):
@@ -25,7 +24,6 @@ class BookSerializer(serializers.ModelSerializer):
 
 class BookDetailSerializer(serializers.ModelSerializer):
     """Сериализатор для Book RETRIEVE."""
-
     authors = AuthorSerializer(many=True, read_only=True, source="author")
 
     class Meta:
