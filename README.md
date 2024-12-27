@@ -19,14 +19,14 @@
 - Docker 4.37.0
 
 ### Использованные пакеты
-coverage
-django
-django-filter
-djangorestframework
-djangorestframework-simplejwt
-drf-yasg
-psycopg2-binary
-python-dotenv
+- coverage
+- django
+- django-filter
+- djangorestframework
+- djangorestframework-simplejwt
+- drf-yasg
+- psycopg2-binary
+- python-dotenv
 
 ### Инструкция для развертывания проекта
 
