@@ -6,6 +6,7 @@
 - Реализовано приложение регистрации и отмены выдачи книги авторизованному пользователю.
 - Описан Dockerfile для запуска контейнера с проектом.
 - Создан Docker Compose Django-проект с БД PostgreSQL.
+- Добавлены тесты. Покрытие - 92%.
 - Работа проверена с помощью Postman и в браузере.
 
 ### Основные приложения
@@ -16,6 +17,16 @@
 - VSCode 1.96.0 (Windows 11)
 - PostgreSQL 16.3
 - Docker 4.37.0
+
+### Использованные пакеты
+coverage
+django
+django-filter
+djangorestframework
+djangorestframework-simplejwt
+drf-yasg
+psycopg2-binary
+python-dotenv
 
 ### Инструкция для развертывания проекта
 
@@ -74,5 +85,5 @@ http://127.0.0.1:8000/book/create/ - CREATE
 http://127.0.0.1:8000/book/update/<pk>/ - PUT, PATCH
 http://127.0.0.1:8000/book/delete/<pk>/ - DELETE
 http://127.0.0.1:8000/book/list?search=<string> - поиск по названию, автору и жанру
-http://127.0.0.1:8000/book/lending/ - выдача/возврат книги: POST {"book": <pk>}
+http://127.0.0.1:8000/book/lending/ - выдача/возврат книги текущему пользователю. Body: POST {"book": <pk>}
 ```
