@@ -6,6 +6,7 @@ temp.*
 .flake8
 .pylintrc
 .env.local
+.env.docker
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
